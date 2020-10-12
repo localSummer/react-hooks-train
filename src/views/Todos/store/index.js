@@ -3,7 +3,7 @@ import todoReducer from './reducers/todoReducer'
 import countReducer from './reducers/countReducer'
 
 export const initStore = (setter) => {
-  return createStore(
+  createStore(
     {
       todos: [],
       count: 0,

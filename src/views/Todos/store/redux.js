@@ -8,7 +8,6 @@ export const createStore = (state, setter, combineReducer) => {
   store = state
   updater = setter
   reducer = combineReducer
-  return store
 }
 
 export const getState = () => store
