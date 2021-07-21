@@ -6,6 +6,7 @@ const Todos = loadable(() => import(/* webpackChunkName: "Todos" */ '../views/To
 const Hooks = loadable(() => import(/* webpackChunkName: "Hooks" */ '../views/Hooks'))
 const Props = loadable(() => import(/* webpackChunkName: "Props" */ '../views/Props'))
 const Form = loadable(() => import(/* webpackChunkName: "Form" */ '../views/Form'))
+const FormContext = loadable(() => import(/* webpackChunkName: "FormContext" */ '../views/FormContext'))
 
 const Router = () => {
   return (
@@ -15,7 +16,8 @@ const Router = () => {
         <Route exact path="/hooks" component={Hooks} />
         <Route exact path="/props" component={Props} />
         <Route exact path="/form" component={Form} />
-        <Redirect path="*" to="/form" />
+        <Route exact path="/formContext" component={FormContext} />
+        <Redirect path="*" to="/formContext" />
       </Switch>
     </HashRouter>
   )
