@@ -74,7 +74,8 @@
     "extends": [
       "react-app",
       "plugin:prettier/recommended"
-    ]
+    ],
+    "excludes": ["config"]
   },
   "browserslist": {
     "production": [
