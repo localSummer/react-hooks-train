@@ -16,7 +16,13 @@ export const setState = (state) => {
   store = state
 }
 
+/**
+ * 合并reducer为一个新的reducer
+ * @param reducers
+ * @returns {function(*, *=): {}}
+ */
 export const combineReducers = (reducers) => {
+  /** 返回新的reducer */
   return (state, action) => {
     let newState = {}
     for (let key in state) {
