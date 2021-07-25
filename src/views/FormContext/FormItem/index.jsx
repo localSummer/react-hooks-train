@@ -5,10 +5,6 @@ const FormItem = (props) => {
   const context = useContext(FormContext)
   const { children, name, label } = props
 
-  const handleChange = (value) => {
-    context.handleChange(name, value)
-  }
-
   const renderContent = () => {
     if (React.isValidElement(children) && children.type.displayName === 'input') {
       return (
