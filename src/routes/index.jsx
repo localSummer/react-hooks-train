@@ -8,6 +8,9 @@ const Props = loadable(() => import(/* webpackChunkName: "Props" */ '../views/Pr
 const Form = loadable(() => import(/* webpackChunkName: "Form" */ '../views/Form'))
 const FormContext = loadable(() => import(/* webpackChunkName: "FormContext" */ '../views/FormContext'))
 const LifeCycle = loadable(() => import(/* webpackChunkName: "LifeCycle" */ '../views/LifeCycle'))
+const ScrollViewContainer = loadable(() =>
+  import(/* webpackChunkName: "ScrollViewContainer" */ '../views/ScrollViewContainer')
+)
 
 const Router = () => {
   return (
@@ -19,7 +22,8 @@ const Router = () => {
         <Route exact path="/form" component={Form} />
         <Route exact path="/formContext" component={FormContext} />
         <Route exact path="/lifeCycle" component={LifeCycle} />
-        <Redirect path="*" to="/lifeCycle" />
+        <Route exact path="/scrollview" component={ScrollViewContainer} />
+        <Redirect path="*" to="/scrollview" />
       </Switch>
     </HashRouter>
   )
