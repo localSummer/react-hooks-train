@@ -12,6 +12,7 @@ const LifeCycle = loadable(() => import(/* webpackChunkName: "LifeCycle" */ '../
 //   import(/* webpackChunkName: "ScrollViewContainer" */ '../views/ScrollViewContainer')
 // )
 const RefComponent = loadable(() => import(/* webpackChunkName: "refComponent" */ '../views/RefComponent'))
+const Hoc = loadable(() => import(/* webpackChunkName: "HOC" */ '../views/Hoc'))
 
 const Router = () => {
   return (
@@ -25,7 +26,8 @@ const Router = () => {
         <Route exact path="/lifeCycle" component={LifeCycle} />
         {/* <Route exact path="/scrollview" component={ScrollViewContainer} /> */}
         <Route exact path="/ref" component={RefComponent} />
-        <Redirect path="*" to="/ref" />
+        <Route exact path="/hoc" component={Hoc} />
+        <Redirect path="*" to="/hoc" />
       </Switch>
     </HashRouter>
   )
