@@ -17,6 +17,7 @@ const Suspense = loadable(() => import(/* webpackChunkName: "Suspense" */ '../vi
 const ErrorBoundary = loadable(() => import(/* webpackChunkName: "ErrorBoundary" */ '../views/ErrorBoundary'))
 const AsyncComponent = loadable(() => import(/* webpackChunkName: "AsyncComponent" */ '../views/AsyncComponent'))
 const TimeSlicing = loadable(() => import(/* webpackChunkName: "TimeSlicing" */ '../views/TimeSlicing'))
+const VirtualList = loadable(() => import(/* webpackChunkName: "VirtualList" */ '../views/VirtualList'))
 
 const Router = () => {
   return (
@@ -35,7 +36,8 @@ const Router = () => {
         <Route exact path="/errorBoundary" component={ErrorBoundary} />
         <Route exact path="/asyncComponent" component={AsyncComponent} />
         <Route exact path="/timeSlicing" component={TimeSlicing} />
-        <Redirect path="*" to="/timeSlicing" />
+        <Route exact path="/virtualList" component={VirtualList} />
+        <Redirect path="*" to="/virtualList" />
       </Switch>
     </HashRouter>
   )
