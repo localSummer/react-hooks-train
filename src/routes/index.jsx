@@ -13,6 +13,9 @@ const LifeCycle = loadable(() => import(/* webpackChunkName: "LifeCycle" */ '../
 // )
 const RefComponent = loadable(() => import(/* webpackChunkName: "refComponent" */ '../views/RefComponent'))
 const Hoc = loadable(() => import(/* webpackChunkName: "HOC" */ '../views/Hoc'))
+const Suspense = loadable(() => import(/* webpackChunkName: "Suspense" */ '../views/Suspense'))
+const ErrorBoundary = loadable(() => import(/* webpackChunkName: "ErrorBoundary" */ '../views/ErrorBoundary'))
+const AsyncComponent = loadable(() => import(/* webpackChunkName: "AsyncComponent" */ '../views/AsyncComponent'))
 
 const Router = () => {
   return (
@@ -27,7 +30,10 @@ const Router = () => {
         {/* <Route exact path="/scrollview" component={ScrollViewContainer} /> */}
         <Route exact path="/ref" component={RefComponent} />
         <Route exact path="/hoc" component={Hoc} />
-        <Redirect path="*" to="/hoc" />
+        <Route exact path="/suspense" component={Suspense} />
+        <Route exact path="/errorBoundary" component={ErrorBoundary} />
+        <Route exact path="/asyncComponent" component={AsyncComponent} />
+        <Redirect path="*" to="/asyncComponent" />
       </Switch>
     </HashRouter>
   )
