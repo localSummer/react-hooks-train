@@ -16,6 +16,7 @@ const Hoc = loadable(() => import(/* webpackChunkName: "HOC" */ '../views/Hoc'))
 const Suspense = loadable(() => import(/* webpackChunkName: "Suspense" */ '../views/Suspense'))
 const ErrorBoundary = loadable(() => import(/* webpackChunkName: "ErrorBoundary" */ '../views/ErrorBoundary'))
 const AsyncComponent = loadable(() => import(/* webpackChunkName: "AsyncComponent" */ '../views/AsyncComponent'))
+const TimeSlicing = loadable(() => import(/* webpackChunkName: "TimeSlicing" */ '../views/TimeSlicing'))
 
 const Router = () => {
   return (
@@ -33,7 +34,8 @@ const Router = () => {
         <Route exact path="/suspense" component={Suspense} />
         <Route exact path="/errorBoundary" component={ErrorBoundary} />
         <Route exact path="/asyncComponent" component={AsyncComponent} />
-        <Redirect path="*" to="/asyncComponent" />
+        <Route exact path="/timeSlicing" component={TimeSlicing} />
+        <Redirect path="*" to="/timeSlicing" />
       </Switch>
     </HashRouter>
   )
