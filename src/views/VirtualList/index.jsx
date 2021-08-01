@@ -31,7 +31,9 @@ const VirtualList = () => {
 
   const handleScroll = () => {
     const { scrollTop } = scroll.current
+    console.log('scrollTop: ', scrollTop)
     const { itemHeight, renderCount } = scrollInfo.current
+    /** itemHeight 的整数倍移动 */
     const currentOffset = scrollTop - (scrollTop % itemHeight)
     console.log('currentOffset: ', currentOffset)
     const start = Math.floor(scrollTop / itemHeight)
