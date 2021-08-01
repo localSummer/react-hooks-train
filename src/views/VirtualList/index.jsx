@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import './index.css'
 
 const VirtualList = () => {
   const [dataList, setDataList] = useState([])
@@ -32,6 +33,7 @@ const VirtualList = () => {
     const { scrollTop } = scroll.current
     const { itemHeight, renderCount } = scrollInfo.current
     const currentOffset = scrollTop - (scrollTop % itemHeight)
+    console.log('currentOffset: ', currentOffset)
     const start = Math.floor(scrollTop / itemHeight)
     /** 偏移，产生下滑效果 */
     context.current.style.transform = `translate3d(0, ${currentOffset}px, 0)`
@@ -48,6 +50,8 @@ const VirtualList = () => {
 
   /** 获取渲染区间 */
   const renderList = dataList.slice(start, end)
+
+  console.log('position', position)
 
   return (
     <div className="list-box" ref={box}>
