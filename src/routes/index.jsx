@@ -18,6 +18,7 @@ const ErrorBoundary = loadable(() => import(/* webpackChunkName: "ErrorBoundary"
 const AsyncComponent = loadable(() => import(/* webpackChunkName: "AsyncComponent" */ '../views/AsyncComponent'))
 const TimeSlicing = loadable(() => import(/* webpackChunkName: "TimeSlicing" */ '../views/TimeSlicing'))
 const VirtualList = loadable(() => import(/* webpackChunkName: "VirtualList" */ '../views/VirtualList'))
+const NavRouter = loadable(() => import(/* webpackChunkName: "NavRouter" */ '../views/NavRouter'))
 
 const Router = () => {
   return (
@@ -37,7 +38,8 @@ const Router = () => {
         <Route exact path="/asyncComponent" component={AsyncComponent} />
         <Route exact path="/timeSlicing" component={TimeSlicing} />
         <Route exact path="/virtualList" component={VirtualList} />
-        <Redirect path="*" to="/virtualList" />
+        <Route path="/navRouter" component={NavRouter} />
+        <Redirect path="*" to="/navRouter" />
       </Switch>
     </HashRouter>
   )
