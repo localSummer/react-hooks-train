@@ -3,13 +3,13 @@ function defineReactive(data, key, val) {
     enumerable: true,
     configurable: true,
     get() {
-      console.log('get: ', val);
-      return val;
+      console.log('get: ', val)
+      return val
     },
     set(newVal) {
-      console.log('set: ', newVal);
-      if (val === newVal) return;
-      val = newVal;
-    }
+      console.log('set: ', newVal)
+      if (val === newVal) return
+      val = newVal
+    },
   })
 }
