@@ -19,11 +19,13 @@ const AsyncComponent = loadable(() => import(/* webpackChunkName: "AsyncComponen
 const TimeSlicing = loadable(() => import(/* webpackChunkName: "TimeSlicing" */ '../views/TimeSlicing'))
 const VirtualList = loadable(() => import(/* webpackChunkName: "VirtualList" */ '../views/VirtualList'))
 const NavRouter = loadable(() => import(/* webpackChunkName: "NavRouter" */ '../views/NavRouter'))
+const ImgToClipboard = loadable(() => import(/* webpackChunkName: "ImgToClipboard" */ '../views/ImgToClipboard'))
 
 const Router = () => {
   return (
     <HashRouter>
       <Switch>
+        <Route exact path="/img2clipboard" component={ImgToClipboard} />
         <Route exact path="/todo" component={Todos} />
         <Route exact path="/hooks" component={Hooks} />
         <Route exact path="/props" component={Props} />
