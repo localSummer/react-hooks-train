@@ -19,7 +19,9 @@ const ImgToClipboard = () => {
       if (canvasRef.current) {
         return resolve(canvasRef.current)
       }
-      html2canvas(element).then((canvas) => {
+      html2canvas(element, {
+        useCORS: true,
+      }).then((canvas) => {
         canvasRef.current = canvas
         resolve(canvas)
       })
